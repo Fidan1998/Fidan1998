@@ -743,3 +743,116 @@ h1 span{font-family:'Brush Script MT','Segoe Script',cursive;color:#ffe68d;font-
         aspect-ratio: 4 / 3;
     }
 }
+/* FAMILY GALLERY FIX */
+.family-panel {
+    padding: 35px;
+}
+
+.family-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-auto-rows: 190px;
+    gap: 35px;
+    padding: 25px;
+    align-items: stretch;
+}
+
+/* All frames */
+.family-card {
+    box-sizing: border-box;
+    min-width: 0;
+    min-height: 0;
+    padding: 16px;
+    background: #fff8df;
+    border: 9px ridge #c99b38;
+    box-shadow: 5px 7px 12px rgba(0,0,0,0.35);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    overflow: hidden;
+}
+
+/* Images */
+.family-card img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    min-height: 0;
+    object-fit: cover;
+    object-position: center;
+    background: #e8dfc9;
+    margin: 5px auto;
+}
+
+/* Two larger frames */
+.family-card-one,
+.family-card-two {
+    grid-row: span 2;
+    min-height: 390px;
+    padding: 20px;
+}
+
+/* Smaller frames */
+.family-card-three,
+.family-card-four,
+.family-card-seven,
+.family-card-eight,
+.family-card-nine {
+    min-height: 190px;
+}
+
+/* Keep the playful scrapbook angles */
+.family-card-one { transform: rotate(-2deg); }
+.family-card-two { transform: rotate(2deg); }
+.family-card-three { transform: rotate(1deg); }
+.family-card-four { transform: rotate(-2deg); }
+.mom-frame { transform: rotate(2deg); }
+.star-frame { transform: rotate(-2deg); }
+.family-card-seven { transform: rotate(1deg); }
+.family-card-eight { transform: rotate(-1deg); }
+.family-card-nine { transform: rotate(2deg); }
+
+/* Special decorations */
+.mom-frame,
+.star-frame {
+    padding: 16px;
+}
+
+.love-decoration,
+.star-decoration,
+.special-label,
+.frame-caption {
+    text-align: center;
+    flex-shrink: 0;
+}
+
+/* Tablet */
+@media (max-width: 850px) {
+    .family-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 25px;
+    }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+    .family-panel {
+        padding: 12px;
+    }
+
+    .family-grid {
+        grid-template-columns: 1fr;
+        grid-auto-rows: auto;
+        gap: 28px;
+        padding: 12px;
+    }
+
+    .family-card {
+        min-height: 300px;
+    }
+
+    .family-card img {
+        height: 260px;
+        flex: 0 1 auto;
+    }
+}
