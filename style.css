@@ -109,3 +109,276 @@ h1 span{font-family:'Brush Script MT','Segoe Script',cursive;color:#ffe68d;font-
     }
 }
 
+
+/* =====================================
+   RETRO FAMILY SCRAPBOOK
+===================================== */
+
+.family-panel {
+    padding: 25px 18px;
+    overflow: hidden;
+}
+
+.family-panel h3 {
+    text-align: center;
+    color: #ffe58a;
+    text-shadow: 0 0 8px #ffb700, 0 0 18px #ff8c00;
+    letter-spacing: 2px;
+}
+
+.family-intro {
+    text-align: center;
+    color: #ffe9a8;
+    font-style: italic;
+    margin-bottom: 25px;
+}
+
+/* COLLAGE LAYOUT */
+
+.family-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 25px;
+    align-items: center;
+    padding: 20px 5px;
+}
+
+.family-grid .family-card {
+    box-sizing: border-box;
+    width: 100%;
+    max-width: none;
+    margin: 0;
+    padding: 9px;
+    text-align: center;
+    background: linear-gradient(145deg, #fff1bd, #c58b25, #fff4c9);
+    border: 3px ridge #ffe58a;
+    box-shadow: 0 0 12px #d99b24, 0 0 22px #000;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.family-grid .family-card:hover {
+    transform: scale(1.04) rotate(0deg);
+    box-shadow: 0 0 20px #ffe58a, 0 0 35px #d99b24;
+    z-index: 2;
+}
+
+.family-grid .family-card img {
+    display: block;
+    width: 100%;
+    height: 190px;
+    object-fit: cover;
+    border: 2px solid #583b13;
+}
+
+/* DIFFERENT PHOTO SIZES AND POSITIONS */
+
+.family-card-one {
+    grid-column: span 2;
+    transform: rotate(-1deg);
+}
+
+.family-card-one img {
+    height: 260px !important;
+}
+
+.family-card-two {
+    transform: rotate(2deg);
+}
+
+.family-card-five {
+    transform: rotate(2deg);
+}
+
+.family-card-six {
+    transform: rotate(-2deg);
+}
+
+.family-card-seven {
+    grid-column: span 2;
+    transform: rotate(1deg);
+}
+
+.family-card-seven img {
+    height: 240px !important;
+}
+
+/* PHOTO CAPTIONS */
+
+.family-grid .frame-caption {
+    padding: 10px 4px 5px;
+    color: #432500;
+    font-weight: bold;
+    font-size: 14px;
+    text-shadow: 0 0 3px white;
+}
+
+/* =====================================
+   MOM'S PHOTO - BIG HEARTS AND LOVE
+===================================== */
+
+.family-grid .mom-frame {
+    background: linear-gradient(
+        145deg,
+        #fff0f6,
+        #ff9fc5,
+        #ff4f91,
+        #ffd5e5
+    );
+    border: 5px ridge #ffb6d5;
+    box-shadow:
+        0 0 12px #ff69a6,
+        0 0 25px #ff1493,
+        inset 0 0 15px white;
+    transform: rotate(-2deg) scale(1.03);
+}
+
+.mom-frame img {
+    border: 3px solid #c2185b !important;
+}
+
+.love-decoration {
+    color: #d50063;
+    text-align: center;
+    font-size: 25px;
+    font-weight: bold;
+    padding: 7px 2px;
+    text-shadow: 0 0 7px white, 0 0 12px #ff69a6;
+    letter-spacing: 4px;
+}
+
+.mom-frame .special-label {
+    color: #a00050;
+    background: #ffe5f0;
+    border: 2px dashed #e91e63;
+    border-radius: 8px;
+    padding: 7px 3px;
+    margin: 5px 0 10px;
+    font-size: 13px;
+    font-weight: bold;
+    text-shadow: 0 0 5px white;
+}
+
+.mom-frame .frame-caption {
+    color: #a00050;
+    font-size: 16px;
+    text-shadow: 0 0 5px white;
+}
+
+.love-message {
+    color: #fff;
+    background: linear-gradient(90deg, #c2185b, #ff4f91, #c2185b);
+    padding: 9px 3px;
+    margin: 7px 0;
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-shadow: 0 0 5px #79003b;
+    box-shadow: 0 0 12px #ff69a6;
+}
+
+/* =====================================
+   YOUR PHOTO - GOLDEN STARS
+===================================== */
+
+.family-grid .star-frame {
+    background: linear-gradient(
+        145deg,
+        #fffbd0,
+        #ffdb57,
+        #e9a900,
+        #fff4a3
+    );
+    border: 5px ridge #fff0a0;
+    box-shadow:
+        0 0 12px #fff,
+        0 0 25px #ffd700,
+        0 0 40px #e9a900,
+        inset 0 0 15px white;
+    transform: rotate(2deg) scale(1.03);
+}
+
+.star-frame img {
+    border: 3px solid #a87500 !important;
+}
+
+.star-decoration {
+    color: #fff7b0;
+    text-align: center;
+    font-size: 25px;
+    padding: 7px 2px;
+    text-shadow:
+        0 0 5px #fff,
+        0 0 12px #ffb700,
+        0 0 20px #ff8c00;
+    letter-spacing: 4px;
+}
+
+.star-frame .special-label {
+    color: #805300;
+    background: #fff5bd;
+    border: 2px dashed #d99b00;
+    border-radius: 8px;
+    padding: 7px 3px;
+    margin: 5px 0 10px;
+    font-size: 13px;
+    font-weight: bold;
+    text-shadow: 0 0 5px white;
+}
+
+.star-frame .frame-caption {
+    color: #805300;
+    font-size: 16px;
+    text-shadow: 0 0 5px white;
+}
+
+.star-message {
+    color: #fff;
+    background: linear-gradient(90deg, #a66c00, #e6a800, #a66c00);
+    padding: 9px 3px;
+    margin: 7px 0;
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-shadow: 0 0 5px #674000;
+    box-shadow: 0 0 12px #ffd700;
+}
+
+/* MOBILE VERSION */
+
+@media (max-width: 700px) {
+    .family-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 18px;
+    }
+
+    .family-card-one,
+    .family-card-seven {
+        grid-column: span 2;
+    }
+
+    .family-grid .family-card img {
+        height: 160px;
+    }
+
+    .family-card-one img,
+    .family-card-seven img {
+        height: 210px !important;
+    }
+
+    .love-decoration,
+    .star-decoration {
+        font-size: 19px;
+        letter-spacing: 2px;
+    }
+}
+
+@media (max-width: 420px) {
+    .family-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .family-card-one,
+    .family-card-seven {
+        grid-column: span 1;
+    }
+}
