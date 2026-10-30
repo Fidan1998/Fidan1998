@@ -855,10 +855,4 @@ h1 span{font-family:'Brush Script MT','Segoe Script',cursive;color:#ffe68d;font-
         height: 260px;
         flex: 0 1 auto;
     }
-}
-/* Make photos 8 and 9 larger */
-.family-card-eight,
-.family-card-nine {
-    grid-row: span 2;
-    min-height: 300px;
-}
+
