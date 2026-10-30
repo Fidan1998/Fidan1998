@@ -604,3 +604,142 @@ h1 span{font-family:'Brush Script MT','Segoe Script',cursive;color:#ffe68d;font-
         height: 220px;
     }
 }
+
+/* =====================================
+   FAMILY PAGE - SPACIOUS PHOTO GALLERY
+===================================== */
+
+.family-panel {
+    padding: 30px;
+    margin-top: 25px;
+}
+
+/* More space between all photo frames */
+.family-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 35px;
+    align-items: start;
+    padding: 15px;
+}
+
+/* Individual photo frames */
+.family-card {
+    width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+    padding: 14px;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+/* Consistent photo sizing */
+.family-card img {
+    display: block;
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    margin: 8px 0;
+}
+
+/* Captions */
+.family-card .frame-caption {
+    text-align: center;
+    padding: 12px 5px 5px;
+    line-height: 1.5;
+    font-size: 14px;
+}
+
+/* Special decorations */
+.mom-frame,
+.star-frame {
+    padding: 16px;
+}
+
+.love-decoration,
+.star-decoration {
+    text-align: center;
+    padding: 8px 0;
+    line-height: 1.7;
+}
+
+.special-label {
+    text-align: center;
+    margin: 8px 0;
+    line-height: 1.6;
+    letter-spacing: 1px;
+}
+
+.love-message,
+.star-message {
+    text-align: center;
+    padding: 12px 5px;
+    line-height: 1.5;
+    font-weight: bold;
+}
+
+/* Give the gallery a more natural collage layout */
+.family-card-one {
+    transform: rotate(-1deg);
+}
+
+.family-card-two {
+    transform: rotate(1deg);
+}
+
+.mom-frame {
+    transform: rotate(1deg);
+}
+
+.star-frame {
+    transform: rotate(-1deg);
+}
+
+.family-card-five {
+    transform: rotate(1deg);
+}
+
+.family-card-six {
+    transform: rotate(-1deg);
+}
+
+.family-card-seven {
+    transform: rotate(1deg);
+}
+
+/* Tablet */
+@media (max-width: 850px) {
+    .family-grid {
+        gap: 25px;
+        padding: 8px;
+    }
+
+    .family-card img {
+        height: 230px;
+    }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+    .family-panel {
+        padding: 15px;
+    }
+
+    .family-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        padding: 5px;
+    }
+
+    .family-card {
+        padding: 12px;
+    }
+
+    .family-card img {
+        height: auto;
+        max-height: 380px;
+        aspect-ratio: 4 / 3;
+    }
+}
