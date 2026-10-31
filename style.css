@@ -901,45 +901,7 @@ h1 span{font-family:'Brush Script MT','Segoe Script',cursive;color:#ffe68d;font-
         max-height: 620px;
     }
 }
-/* BIG THREE-PHOTO GALLERY */
-.gallery-grid {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 30px;
-    max-width: 1050px;
-    margin: 40px auto;
-}
-
-.gallery-placeholder {
-    min-height: 380px;
-    padding: 25px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-}
-
-/* Third photo centered underneath */
-.gallery-placeholder:nth-child(3) {
-    grid-column: 1 / 3;
-    justify-self: center;
-    width: 70%;
-    min-height: 380px;
-}
-
-/* Smaller screens */
-@media (max-width: 650px) {
-    .gallery-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .gallery-placeholder:nth-child(3) {
-        grid-column: auto;
-        width: 100%;
-    }
-}
-/* PHOTO GALLERY LAYOUT */
+/* THREE-PHOTO GALLERY */
 .gallery-grid {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -947,51 +909,52 @@ h1 span{font-family:'Brush Script MT','Segoe Script',cursive;color:#ffe68d;font-
     max-width: 1100px;
     margin: 40px auto;
     padding: 0 20px;
-}
-
-/* PHOTO FRAMES */
-.gallery-placeholder {
-    width: fit-content;
-    max-width: 100%;
-    height: auto;
-    min-height: 0;
-    padding: 12px;
-    margin: 0 auto;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    align-items: start;
     box-sizing: border-box;
 }
 
-.gallery-placeholder img {
+/* PHOTO FRAME */
+.gallery-grid .gallery-placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-width: 0;
+    height: auto;
+    min-height: 0;
+    padding: 12px;
+    margin: 0;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+/* PHOTO */
+.gallery-grid .gallery-placeholder img {
     display: block;
-    width: auto;
+    width: 100%;
     height: auto;
     max-width: 100%;
     max-height: 500px;
     object-fit: contain;
+    margin: 0;
 }
-/* THIRD PHOTO CENTERED BELOW */
-.gallery-placeholder:nth-child(3) {
+
+/* THIRD PHOTO CENTERED */
+.gallery-grid .gallery-placeholder:nth-child(3) {
     grid-column: 1 / 3;
     justify-self: center;
     width: 70%;
-    height: 420px;
 }
 
 /* MOBILE */
 @media (max-width: 650px) {
     .gallery-grid {
         grid-template-columns: 1fr;
+        gap: 20px;
     }
 
-    .gallery-placeholder {
-        height: 320px;
-    }
-
-    .gallery-placeholder:nth-child(3) {
-        grid-column: auto;
+    .gallery-grid .gallery-placeholder:nth-child(3) {
+        grid-column: 1;
         width: 100%;
-        height: 320px;
     }
 }
