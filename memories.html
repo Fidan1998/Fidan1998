@@ -1,8 +1,138 @@
+```html
 <!DOCTYPE html>
-<html lang="en">
-<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>OLD ROCKER CAVID — Memories</title><link rel="stylesheet" href="style.css"></head>
-<body class="inside-page">
-<header class="site-header"><div class="header-stars">★ ✧ ★ ✧ ★ ✧ ★</div><h1>OLD ROCKER <span>CAVID</span></h1><p class="tagline">THE STORIES WE'LL TELL FOREVER</p><div class="header-stars">✧ ★ ✧ ★ ✧ ★</div></header>
-<div class="page-wrap"><nav class="sidebar"><h2>★ THE MENU ★</h2><a href="home.html">» Home</a><a href="about.html">» The Legend</a><a href="gallery.html">» Photo Album</a><a class="active" href="memories.html">» Memories</a><a href="music.html">» The Soundtrack</a></nav>
-<main class="content"><div class="notice">✦ OUR LITTLE MEMORY BOOK ✦</div><h2 class="gold-heading">Remember when...</h2><div class="memory-card"><span>✦ MEMORY #01 ✦</span><p><strong>[Give this memory a title]</strong></p><p>Write a funny story, a family tradition, or a moment that still makes you smile.</p></div><div class="memory-card"><span>✦ MEMORY #02 ✦</span><p><strong>[A moment we'll never forget]</strong></p><p>Add another memory here. Specific details and little in-jokes make this page extra special.</p></div><div class="memory-card"><span>✦ A MESSAGE FOR DAD ✦</span><p>Thank you for the memories, the lessons, the laughs, and all the ways you show up. We love you. ♥</p></div><p class="back-link"><a href="home.html">« Back to the birthday homepage</a></p></main></div>
-<footer class="site-footer"><p>© 2026 OLD ROCKER CAVID · MADE WITH ♥ FOR DAD</p></footer><script src="script.js"></script></body></html>
+<html lang="az">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>OLD ROCKER CAVID — Dost Məclisi</title>
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        /* DOSTLARIN FOTO ALBOMU — yalnız bu səhifəyə aiddir */
+        body.memories-page .content .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            align-items: start;
+            gap: 30px;
+            width: 100%;
+            max-width: 1100px;
+            margin: 40px auto;
+            padding: 0 15px;
+            box-sizing: border-box;
+        }
+
+        /* FOTO ÇƏRÇİVƏLƏRİ */
+        body.memories-page .content .gallery-placeholder {
+            display: block;
+            width: fit-content;
+            max-width: 100%;
+            height: auto;
+            min-height: 0;
+            padding: 12px;
+            margin: 0 auto;
+            box-sizing: border-box;
+            overflow: visible;
+        }
+
+        /* FOTOLARIN ÖLÇÜSÜ */
+        body.memories-page .content .gallery-placeholder img {
+            display: block;
+            width: auto;
+            height: auto;
+            max-width: 100%;
+            max-height: 500px;
+            object-fit: contain;
+            object-position: center;
+            margin: 0 auto;
+        }
+
+        /* BEŞİNCİ FOTO — AŞAĞIDA, ORTADA */
+        body.memories-page .content .gallery-placeholder:nth-child(5) {
+            grid-column: 1 / 3;
+            justify-self: center;
+        }
+
+        /* TELEFONLAR ÜÇÜN */
+        @media (max-width: 650px) {
+            body.memories-page .content .gallery-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            body.memories-page .content .gallery-placeholder {
+                max-width: 100%;
+            }
+
+            body.memories-page .content .gallery-placeholder:nth-child(5) {
+                grid-column: 1;
+            }
+        }
+    </style>
+</head>
+
+<body class="inside-page memories-page">
+
+    <header class="site-header">
+        <div class="header-stars">★ ✧ ★ ✧ ★ ✧ ★</div>
+        <h1>OLD ROCKER <span>CAVID</span></h1>
+        <div class="header-stars">✧ ★ ✧ ★ ✧ ★</div>
+    </header>
+
+    <div class="page-wrap">
+
+        <nav class="sidebar">
+            <h2>★ MENYU ★</h2>
+
+            <a href="home.html">» Əfsanənin hekayəsi</a>
+            <a href="about.html">» Ailə həyatı</a>
+            <a href="gallery.html">» Əsərləri</a>
+            <a class="active" href="memories.html">» Dost məclisi</a>
+            <a href="music.html">» Xatirələr</a>
+        </nav>
+
+        <main class="content">
+
+            <div class="notice">🍺 🍺 🍺 🍺 🍺 🍺 🍺 🍺 🍺 🍺 🍺</div>
+
+            <h2 class="gold-heading">Dost məclisi</h2>
+
+            <div class="gallery-grid">
+
+                <div class="gallery-placeholder">
+                    <img src="Images/IMG-20161206-WA0007.jpg" alt="Dostlarla birinci foto">
+                </div>
+
+                <div class="gallery-placeholder">
+                    <img src="Images/IMG-20161206-WA0048.jpg" alt="Dostlarla ikinci foto">
+                </div>
+
+                <div class="gallery-placeholder">
+                    <img src="Images/IMG-20181101-WA0003.jpg" alt="Dostlarla üçüncü foto">
+                </div>
+
+                <div class="gallery-placeholder">
+                    <img src="Images/PHOTO-4.jpg" alt="Dostlarla dördüncü foto">
+                </div>
+
+                <div class="gallery-placeholder">
+                    <img src="Images/PHOTO-5.jpg" alt="Dostlarla beşinci foto">
+                </div>
+
+            </div>
+
+            <p class="back-link">
+                <a href="home.html">« Əfsanənin hekayəsinə qayıt</a>
+            </p>
+
+        </main>
+    </div>
+
+    <footer class="site-footer">
+        <p>© 2026 OLD ROCKER CAVID · ATAMIZ ÜÇÜN ♥ İLƏ HAZIRLANIB</p>
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
+```
