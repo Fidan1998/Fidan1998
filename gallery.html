@@ -1,38 +1,21 @@
-/* BIG THREE-PHOTO GALLERY */
-.gallery-grid {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 30px;
-    max-width: 1050px;
-    margin: 40px auto;
-}
+<div class="gallery-grid">
 
-.gallery-placeholder {
-    min-height: 380px;
-    padding: 25px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-}
+    <div class="gallery-placeholder">
+        <span>📸</span>
+        <strong>BİRİNCİ FOTO</strong>
+        <small>Əfsanəvi bir an</small>
+    </div>
 
-/* Third photo centered underneath */
-.gallery-placeholder:nth-child(3) {
-    grid-column: 1 / 3;
-    justify-self: center;
-    width: 70%;
-    min-height: 380px;
-}
+    <div class="gallery-placeholder">
+        <span>🎸</span>
+        <strong>İKİNCİ FOTO</strong>
+        <small>Rok ulduzu səhnədə</small>
+    </div>
 
-/* Smaller screens */
-@media (max-width: 650px) {
-    .gallery-grid {
-        grid-template-columns: 1fr;
-    }
+    <div class="gallery-placeholder">
+        <span>♥</span>
+        <strong>ÜÇÜNCÜ FOTO</strong>
+        <small>Yaddaşlardan silinməyən an</small>
+    </div>
 
-    .gallery-placeholder:nth-child(3) {
-        grid-column: auto;
-        width: 100%;
-    }
-}
+</div>
