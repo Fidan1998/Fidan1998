@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="az">
 <head>
@@ -7,76 +8,70 @@
     <link rel="stylesheet" href="style.css">
 
     <style>
-        /* FOTO ALBOMU */
-        body.inside-page .content .gallery-grid {
-            display: grid !important;
-            grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
-            gap: 30px !important;
-            width: 100% !important;
-            max-width: 1100px !important;
-            margin: 40px auto !important;
-            padding: 0 15px !important;
-            box-sizing: border-box !important;
+        /* FOTO ALBOMU — yalnız bu səhifəyə aiddir */
+        body.gallery-page .content .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            align-items: start;
+            gap: 30px;
+            width: 100%;
+            max-width: 1100px;
+            margin: 40px auto;
+            padding: 0 15px;
+            box-sizing: border-box;
         }
 
-        /* HƏR BİR FOTO ÇƏRÇİVƏSİ */
-        body.inside-page .content .gallery-grid .gallery-placeholder {
-            width: 100% !important;
-            height: 420px !important;
-            min-height: 0 !important;
-            max-height: 420px !important;
-            padding: 12px !important;
-            margin: 0 !important;
-            box-sizing: border-box !important;
-            display: flex !important;
-            align-items: center !important;
-            justify-content: center !important;
-            overflow: hidden !important;
+        /* ÇƏRÇİVƏ — fotonun ölçüsünə uyğunlaşır */
+        body.gallery-page .content .gallery-placeholder {
+            display: block;
+            width: fit-content;
+            max-width: 100%;
+            height: auto;
+            min-height: 0;
+            max-height: none;
+            padding: 12px;
+            margin: 0 auto;
+            box-sizing: border-box;
+            overflow: visible;
         }
 
-        /* FOTOLARIN ÖLÇÜSÜ */
-        body.inside-page .content .gallery-grid .gallery-placeholder img {
-            display: block !important;
-            width: 100% !important;
-            height: 100% !important;
-            max-width: 100% !important;
-            max-height: 100% !important;
-            min-width: 0 !important;
-            min-height: 0 !important;
-            object-fit: contain !important;
-            object-position: center !important;
-            margin: 0 !important;
-            padding: 0 !important;
+        /* FOTO — orijinal nisbətini qoruyur */
+        body.gallery-page .content .gallery-placeholder img {
+            display: block;
+            width: auto;
+            height: auto;
+            max-width: 100%;
+            max-height: 500px;
+            object-fit: contain;
+            object-position: center;
+            margin: 0 auto;
         }
 
-        /* ÜÇÜNCÜ FOTO AŞAĞIDA, ORTADA */
-        body.inside-page .content .gallery-grid .gallery-placeholder:nth-child(3) {
-            grid-column: 1 / 3 !important;
-            justify-self: center !important;
-            width: 70% !important;
+        /* ÜÇÜNCÜ FOTO — aşağıda, ortada */
+        body.gallery-page .content .gallery-placeholder:nth-child(3) {
+            grid-column: 1 / 3;
+            justify-self: center;
         }
 
         /* TELEFONLAR ÜÇÜN */
         @media (max-width: 650px) {
-            body.inside-page .content .gallery-grid {
-                grid-template-columns: 1fr !important;
-                gap: 20px !important;
+            body.gallery-page .content .gallery-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
             }
 
-            body.inside-page .content .gallery-grid .gallery-placeholder {
-                height: 320px !important;
-                max-height: 320px !important;
+            body.gallery-page .content .gallery-placeholder {
+                max-width: 100%;
             }
 
-            body.inside-page .content .gallery-grid .gallery-placeholder:nth-child(3) {
-                grid-column: 1 !important;
-                width: 100% !important;
+            body.gallery-page .content .gallery-placeholder:nth-child(3) {
+                grid-column: 1;
             }
         }
     </style>
 </head>
 
-<body class="inside-page">
+<body class="inside-page gallery-page">
 
     <header class="site-header">
         <div class="header-stars">★ ✧ ★ ✧ ★ ✧ ★</div>
