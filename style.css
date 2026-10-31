@@ -605,179 +605,299 @@ h1 span{font-family:'Brush Script MT','Segoe Script',cursive;color:#ffe68d;font-
     }
 }
 
-/* =====================================
-   FAMILY PAGE - SPACIOUS PHOTO GALLERY
-===================================== */
+/* =========================================================
+   FAMILY PAGE ONLY — WIDE, LONG RETRO SCRAPBOOK GALLERY
+   The :has() selectors below apply only to the page containing
+   .family-panel. Other pages keep their original layout.
+========================================================= */
 
-/* =================================
-   FAMILY GALLERY — BIG SCRAPBOOK
-================================= */
+/* Give the family page a genuinely wide content area. */
+.page-wrap:has(.family-panel) {
+    width: min(98%, 1600px);
+    max-width: 1600px;
+    grid-template-columns: 190px minmax(0, 1fr);
+    gap: 22px;
+}
+
+.page-wrap:has(.family-panel) > .content {
+    min-width: 0;
+    width: 100%;
+    padding: 24px;
+}
 
 .family-panel {
-    padding: 45px;
-    margin-top: 35px;
+    width: 100%;
+    max-width: none;
+    box-sizing: border-box;
+    margin: 24px 0 40px;
+    padding: 38px clamp(18px, 3vw, 52px);
+    overflow: visible;
 }
 
+/* Two columns make the page spacious; the content determines page height. */
 .family-grid {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 35px 18px 55px;
+    box-sizing: border-box;
     display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    grid-auto-rows: 260px;
-    gap: 55px 45px;
-    padding: 35px 20px;
-    align-items: stretch;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-auto-rows: auto;
+    gap: 75px clamp(28px, 4vw, 65px);
+    align-items: start;
+    justify-items: stretch;
 }
 
-.family-card {
+/* Every frame grows to fit its photo and decorations. */
+.family-grid .family-card {
     box-sizing: border-box;
     width: 100%;
+    max-width: none;
     min-width: 0;
     min-height: 0;
+    margin: 0;
     padding: 22px;
     display: flex;
     flex-direction: column;
     align-items: stretch;
     justify-content: flex-start;
-    background: #fff5d8;
+    text-align: center;
+    background: linear-gradient(145deg, #fff5d8, #e5c477, #fff8df);
     border: 12px ridge #d5a33e;
     outline: 2px solid #8b641e;
     outline-offset: 4px;
-    box-shadow: 7px 9px 0 rgba(75, 43, 10, 0.18),
-                0 8px 18px rgba(0, 0, 0, 0.25);
+    box-shadow: 8px 10px 0 rgba(75, 43, 10, .18),
+                0 10px 24px rgba(0, 0, 0, .28),
+                0 0 16px rgba(255, 218, 100, .35);
     overflow: visible;
+    transition: transform .25s ease, box-shadow .25s ease;
 }
 
-.family-card img {
+.family-grid .family-card:hover {
+    z-index: 2;
+    box-shadow: 0 0 20px #ffe58a, 0 0 35px #d99b24;
+}
+
+/* Crucial: natural height + contain means no stretching or cropping. */
+.family-grid .family-card img {
     display: block;
     width: 100%;
-    height: 100%;
-    min-height: 0;
-    flex: 1 1 auto;
-    object-fit: contain;
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: 620px;
+    flex: 0 0 auto !important;
+    object-fit: contain !important;
     object-position: center;
+    margin: 0 auto;
+    border: 2px solid #583b13;
     background: #e9dfc8;
-    margin: 8px 0;
 }
 
-/* First two large photos */
-.family-card-one,
-.family-card-two {
-    grid-row: span 2;
-    min-height: 550px;
-    padding: 25px;
+/* Two feature photos — large frames, but still preserve photo proportions. */
+.family-grid .family-card-one,
+.family-grid .family-card-two {
+    min-height: 0;
+    padding: 26px;
 }
 
-.family-card-one { transform: rotate(-2deg); }
-.family-card-two { transform: rotate(2deg); }
-
-/* Other photos */
-.family-card-three,
-.family-card-four,
-.family-card-seven,
-.family-card-eight,
-.family-card-nine {
-    min-height: 260px;
+.family-grid .family-card-one img,
+.family-grid .family-card-two img {
+    max-height: 680px;
 }
 
-.family-card-three { transform: rotate(2deg); }
-.family-card-four { transform: rotate(-2deg); }
-.family-card-seven { transform: rotate(1deg); }
-.family-card-eight { transform: rotate(-2deg); }
-.family-card-nine { transform: rotate(2deg); }
+.family-grid .family-card-one { transform: rotate(-1.5deg); }
+.family-grid .family-card-two { transform: rotate(1.5deg); }
+.family-grid .family-card-three { transform: rotate(1.2deg); }
+.family-grid .family-card-four { transform: rotate(-1.2deg); }
+.family-grid .family-card-seven { transform: rotate(1.5deg); }
+.family-grid .family-card-eight { transform: rotate(-1.5deg); }
+.family-grid .family-card-nine { transform: rotate(1.2deg); }
 
-/* Mother — heart frame */
-.mom-frame {
-    min-height: 380px;
-    padding: 20px;
-    transform: rotate(2deg);
-    border: 12px ridge #d98a9f;
-    background: #fff0f3;
+/* Mother — pink heart frame. */
+.family-grid .mom-frame {
+    min-height: 0;
+    padding: 22px;
+    transform: rotate(-1.5deg) scale(1.02);
+    border: 12px ridge #ff9fc5;
+    background: linear-gradient(145deg, #fff0f6, #ffb5d0, #ff6fa8, #ffe0ec);
+    box-shadow: 0 0 14px #ffb6d0, 0 0 28px #ff69a6,
+                inset 0 0 15px white;
 }
 
-.mom-frame img {
-    height: 240px;
-    min-height: 240px;
-    flex: 0 0 240px;
+.family-grid .mom-frame img {
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: 520px;
+    flex: 0 0 auto !important;
+    border: 3px solid #c2185b;
 }
 
-/* Star frame */
-.star-frame {
-    min-height: 380px;
-    padding: 20px;
-    transform: rotate(-2deg);
-    border: 12px ridge #e3b83f;
-    background: #fff8d9;
-}
-
-.star-frame img {
-    height: 240px;
-    min-height: 240px;
-    flex: 0 0 240px;
-}
-
-/* Decorations */
-.love-decoration,
-.star-decoration {
+.family-grid .mom-frame .love-decoration {
+    color: #d50063;
     text-align: center;
-    font-size: 20px;
-    padding: 8px 0;
-    flex-shrink: 0;
-}
-
-.special-label {
-    text-align: center;
-    font-size: 16px;
+    font-size: 25px;
     font-weight: bold;
-    margin: 8px 0;
-    flex-shrink: 0;
+    letter-spacing: 4px;
+    padding: 8px 2px;
+    text-shadow: 0 0 7px white, 0 0 12px #ff69a6;
 }
 
-.frame-caption {
-    text-align: center;
+.family-grid .mom-frame .special-label {
+    color: #a00050;
+    background: #ffe5f0;
+    border: 2px dashed #e91e63;
+    border-radius: 8px;
+    padding: 7px 5px;
+    margin: 8px 0;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.family-grid .mom-frame .frame-caption {
+    color: #a00050;
     font-size: 17px;
+    text-shadow: 0 0 5px white;
+}
+
+/* You — golden star frame. */
+.family-grid .star-frame {
+    min-height: 0;
+    padding: 22px;
+    transform: rotate(1.5deg) scale(1.02);
+    border: 12px ridge #fff0a0;
+    background: linear-gradient(145deg, #fffbd0, #ffdb57, #e9a900, #fff4a3);
+    box-shadow: 0 0 14px #fff, 0 0 28px #ffd700,
+                0 0 40px #e9a900, inset 0 0 15px white;
+}
+
+.family-grid .star-frame img {
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: 520px;
+    flex: 0 0 auto !important;
+    border: 3px solid #a87500;
+}
+
+.family-grid .star-frame .star-decoration {
+    color: #fff7b0;
+    text-align: center;
+    font-size: 25px;
+    letter-spacing: 4px;
+    padding: 8px 2px;
+    text-shadow: 0 0 5px #fff, 0 0 12px #ffb700, 0 0 20px #ff8c00;
+}
+
+.family-grid .star-frame .special-label {
+    color: #805300;
+    background: #fff5bd;
+    border: 2px dashed #d99b00;
+    border-radius: 8px;
+    padding: 7px 5px;
+    margin: 8px 0;
+    font-size: 14px;
     font-weight: bold;
-    padding: 10px 4px;
+}
+
+.family-grid .star-frame .frame-caption {
+    color: #805300;
+    font-size: 17px;
+    text-shadow: 0 0 5px white;
+}
+
+/* Captions and optional little messages inside the frames. */
+.family-grid .frame-caption {
+    color: #432500;
+    font: bold 15px Georgia, serif;
+    text-align: center;
+    line-height: 1.5;
+    padding: 12px 5px 5px;
     flex-shrink: 0;
 }
 
-/* Tablet */
-@media (max-width: 950px) {
-    .family-panel { padding: 25px; }
+.family-grid .love-message,
+.family-grid .star-message {
+    color: #fff;
+    padding: 9px 5px;
+    margin: 8px 0 2px;
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-align: center;
+}
 
-    .family-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        grid-auto-rows: 230px;
-        gap: 45px 30px;
+.family-grid .love-message {
+    background: linear-gradient(90deg, #c2185b, #ff4f91, #c2185b);
+    box-shadow: 0 0 12px #ff69a6;
+}
+
+.family-grid .star-message {
+    background: linear-gradient(90deg, #a66c00, #e6a800, #a66c00);
+    box-shadow: 0 0 12px #ffd700;
+}
+
+/* Medium screens: keep the two-column scrapbook until it truly gets tight. */
+@media (max-width: 950px) {
+    .page-wrap:has(.family-panel) {
+        width: 98%;
+        grid-template-columns: 155px minmax(0, 1fr);
+        gap: 14px;
     }
 
-    .family-card-one,
-    .family-card-two {
-        min-height: 490px;
+    .page-wrap:has(.family-panel) > .content {
+        padding: 16px;
+    }
+
+    .family-panel {
+        padding: 24px 12px;
+    }
+
+    .family-grid {
+        gap: 55px 28px;
+        padding: 25px 10px 40px;
+    }
+
+    .family-grid .family-card {
+        padding: 16px;
+        border-width: 9px;
     }
 }
 
-/* Mobile */
-@media (max-width: 600px) {
-    .family-panel { padding: 15px; }
+/* Phones: one full-width photo frame per row. */
+@media (max-width: 650px) {
+    .page-wrap:has(.family-panel) {
+        width: 96%;
+        grid-template-columns: 1fr;
+    }
+
+    .page-wrap:has(.family-panel) > .content {
+        padding: 12px;
+    }
+
+    .family-panel {
+        padding: 18px 8px;
+    }
 
     .family-grid {
-        grid-template-columns: 1fr;
-        grid-auto-rows: auto;
-        gap: 40px;
-        padding: 15px 8px;
+        grid-template-columns: minmax(0, 1fr);
+        gap: 48px;
+        padding: 18px 8px 35px;
     }
 
-    .family-card,
-    .family-card-one,
-    .family-card-two,
-    .mom-frame,
-    .star-frame {
+    .family-grid .family-card,
+    .family-grid .family-card-one,
+    .family-grid .family-card-two,
+    .family-grid .mom-frame,
+    .family-grid .star-frame {
+        width: 100%;
         min-height: 0;
-        padding: 18px;
+        padding: 16px;
+        transform: none;
     }
 
-    .family-card img {
-        height: 300px;
-        min-height: 300px;
-        flex: 0 0 300px;
+    .family-grid .family-card img {
+        width: 100%;
+        height: auto !important;
+        max-height: 620px;
     }
 }
