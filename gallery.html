@@ -1,79 +1,38 @@
-```html
-<!DOCTYPE html>
-<html lang="az">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>OLD ROCKER CAVID — Foto Albom</title>
-<link rel="stylesheet" href="style.css">
-</head>
+/* BIG THREE-PHOTO GALLERY */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 30px;
+    max-width: 1050px;
+    margin: 40px auto;
+}
 
-<body class="inside-page">
+.gallery-placeholder {
+    min-height: 380px;
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
 
-<header class="site-header">
-    <div class="header-stars">★ ✧ ★ ✧ ★ ✧ ★</div>
-    <h1>OLD ROCKER <span>CAVID</span></h1>
-    <p class="tagline">MINLƏRLƏ XATİRƏ, MINLƏRLƏ TƏBƏSSÜM</p>
-    <div class="header-stars">✧ ★ ✧ ★ ✧ ★</div>
-</header>
+/* Third photo centered underneath */
+.gallery-placeholder:nth-child(3) {
+    grid-column: 1 / 3;
+    justify-self: center;
+    width: 70%;
+    min-height: 380px;
+}
 
-<div class="page-wrap">
+/* Smaller screens */
+@media (max-width: 650px) {
+    .gallery-grid {
+        grid-template-columns: 1fr;
+    }
 
-<nav class="sidebar">
-    <h2>★ MENYU ★</h2>
-    <a href="home.html">» Ana səhifə</a>
-    <a href="about.html">» Əfsanə</a>
-    <a class="active" href="gallery.html">» Foto albom</a>
-    <a href="memories.html">» Xatirələr</a>
-    <a href="music.html">» Musiqi dünyası</a>
-</nav>
-
-<main class="content">
-
-    <div class="notice">✦ AİLƏ FOTO ALBOMU ✦</div>
-
-    <h2 class="gold-heading">Unudulmaz Anlar</h2>
-
-    <p>
-        Bəziləri buna foto albom deyir. Biz isə buna atamın
-        həmişə əfsanə olduğunun sübutları deyirik. 😎
-    </p>
-
-    <div class="gallery-grid">
-
-        <div class="gallery-placeholder">
-            <span>📸</span>
-            <strong>BİRİNCİ FOTO</strong>
-            <small>Əfsanəvi bir an</small>
-        </div>
-
-        <div class="gallery-placeholder">
-            <span>🎸</span>
-            <strong>İKİNCİ FOTO</strong>
-            <small>Rok ulduzu səhnədə</small>
-        </div>
-
-        <div class="gallery-placeholder">
-            <span>♥</span>
-            <strong>ÜÇÜNCÜ FOTO</strong>
-            <small>Yaddaşlardan silinməyən an</small>
-        </div>
-
-    </div>
-
-    <p class="back-link">
-        <a href="home.html">« Ad günü ana səhifəsinə qayıt</a>
-    </p>
-
-</main>
-</div>
-
-<footer class="site-footer">
-    <p>© 2026 OLD ROCKER CAVID · ATAMIZ ÜÇÜN ♥ İLƏ HAZIRLANIB</p>
-</footer>
-
-<script src="script.js"></script>
-
-</body>
-</html>
-```
+    .gallery-placeholder:nth-child(3) {
+        grid-column: auto;
+        width: 100%;
+    }
+}
